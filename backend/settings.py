@@ -40,10 +40,12 @@ INSTALLED_APPS = [
     'myapp',
     'users',
     'rest_framework',
+    'corsheaders',
     
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -51,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -129,3 +132,18 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+
+# CORS settings
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
+CORS_ALLOW_CREDENTIALS = True
+
+#   "first_name": "John",
+#     "last_name": "Doe",
+#     "email": "john@example.com",
+#     "password": "securepassword",
+#     "gender": "m",
+#     "role_type": "artist"
