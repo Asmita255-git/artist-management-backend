@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp',
     'users',
+    'artist',
+    'music',
     'rest_framework',
     'corsheaders',
     
